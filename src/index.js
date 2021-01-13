@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import Header from './components/Header';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import theme from './components/theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <App />
+      <Header />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
